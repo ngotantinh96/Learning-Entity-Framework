@@ -16,7 +16,9 @@ namespace WebApp.Controllers
         }
         public IActionResult Index()
         {
-            samuraiContext.Samurais.Add(new Samurai { Name = "Julie" });
+            var samurai = new Samurai { Name = "Zoro" };
+            var battle = new Battle { Name = "Luffy vs Kaido" };
+            samuraiContext.AddRange(samurai, battle);
             samuraiContext.SaveChanges();
             return View();
         }
