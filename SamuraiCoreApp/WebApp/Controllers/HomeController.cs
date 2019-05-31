@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SamuraiCoreApp.Data;
-using SamuraiCoreApp.Domain;
 using System.Diagnostics;
+using System.Linq;
 using WebApp.Models;
 
 namespace WebApp.Controllers
@@ -16,10 +17,11 @@ namespace WebApp.Controllers
         }
         public IActionResult Index()
         {
-            var samurai = new Samurai { Name = "Zoro" };
-            var battle = new Battle { Name = "Luffy vs Kaido" };
-            samuraiContext.AddRange(samurai, battle);
-            samuraiContext.SaveChanges();
+            //var samurai = new Samurai { Name = "Zoro" };
+            //var battle = new Battle { Name = "Luffy vs Kaido" };
+            //samuraiContext.AddRange(samurai, battle);
+            //samuraiContext.SaveChanges();
+            var smr = samuraiContext.Samurais.Where(s => EF.Functions.Like(s.Name, "Z%")).ToList();
             return View();
         }
 
