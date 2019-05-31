@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B4B96C9D-EBFF-468F-B6EE-455CA299846E}</ProjectGuid>
+    <ProjectGuid>{BD610602-D23B-43CA-AFE3-74F8E1EDA617}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SamuraiApp.Domain</RootNamespace>
-    <AssemblyName>SamuraiApp.Domain</AssemblyName>
+    <RootNamespace>SamuraiApp.Data</RootNamespace>
+    <AssemblyName>SamuraiApp.Data</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
