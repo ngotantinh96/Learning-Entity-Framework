@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using SamuraiCoreApp.Data;
+using SamuraiCoreApp.Domain;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using WebApp.Models;
 
 namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly SamuraiContext samuraiContext;
+
+        public HomeController(SamuraiContext samuraiContext)
+        {
+            this.samuraiContext = samuraiContext;
+        }
         public IActionResult Index()
         {
+            samuraiContext.Samurais.Add(new Samurai { Name = "Julie" });
+            samuraiContext.SaveChanges();
             return View();
         }
 
