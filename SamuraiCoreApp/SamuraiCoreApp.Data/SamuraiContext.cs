@@ -20,6 +20,10 @@ namespace SamuraiCoreApp.Data
             modelBuilder
                 .Entity<SamuraiBattle>()
                 .HasKey(s => new { s.SamuraiId, s.BattleId });
+
+            modelBuilder.Entity<Samurai>()
+                .HasOne(s => s.SecretIdentity)
+                .WithOne(i => i.Sumurai).HasForeignKey<SecretIdentity>("SamuraiId");
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
